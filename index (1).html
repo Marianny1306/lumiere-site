@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lumière Brazil Travel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f5f1e6;
+    color:#333;
+}
+
+/* NAVBAR LUXO */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter: blur(12px);
+    background:rgba(0,0,0,0.3);
+    color:white;
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    width:0;
+    height:2px;
+    background:#d4af37;
+    position:absolute;
+    bottom:-5px;
+    left:0;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('https://i.postimg.cc/JhqH0snM/Praia-tropical-sob-sol-forte.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:0 80px;
+    color:white;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    top:0;
+    left:0;
+}
+
+.hero-content{
+    position:relative;
+    max-width:500px;
+}
+
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    margin-bottom:25px;
+    font-weight:300;
+}
+
+/* BOTÕES LUXO */
+.btn{
+    padding:12px 25px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#d4af37;
+    color:#000;
+}
+
+.btn-primary:hover{
+    background:#c29b2c;
+}
+
+.btn-secondary{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:black;
+}
+
+/* SEÇÕES */
+section{
+    padding:80px 60px;
+}
+
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    color:#2f6b3f;
+    margin-bottom:40px;
+}
+
+/* CARDS LUXO */
+.cards{
+    display:flex;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h4{
+    margin-bottom:5px;
+}
+
+.card-content p{
+    color:#777;
+    font-size:13px;
+}
+
+.card button{
+    margin-top:15px;
+    width:100%;
+}
+
+/* PACOTES PREMIUM */
+.packages{
+    display:flex;
+    gap:25px;
+}
+
+.package{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.package:hover{
+    transform:scale(1.03);
+}
+
+.package h3{
+    margin-bottom:15px;
+}
+
+.package ul{
+    list-style:none;
+    margin-bottom:15px;
+}
+
+.package ul li{
+    margin-bottom:6px;
+}
+
+.package p{
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+/* SOBRE */
+.about{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+}
+
+/* POR QUE */
+.why{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+}
+
+.why div{
+    max-width:200px;
+}
+
+/* DEPOIMENTOS */
+.testimonials{
+    background:#eee;
+}
+
+.testimonial-box{
+    display:flex;
+    gap:40px;
+}
+
+.testimonial{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* CONTATO */
+.contact{
+    text-align:center;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .cards, .packages, .testimonial-box, .why{
+        flex-direction:column;
+    }
+
+    header{
+        padding:20px;
+    }
+
+    section{
+        padding:60px 20px;
+    }
+
+    .hero{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Lumière Brazil</div>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Destinos</a>
+        <a href="#">Pacotes</a>
+        <a href="#">Promoções</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Descubra o melhor do Brasil</h1>
+        <p>Experiências únicas, natureza exuberante e conforto incomparável</p>
+        <button class="btn btn-primary">Ver Destinos</button>
+        <button class="btn btn-secondary">Montar Minha Viagem</button>
+    </div>
+</div>
+
+<section>
+    <h2 class="section-title">Destinos Populares</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://i.postimg.cc/cHtmn78f/e09a8e58ebf4b959e739f85c0ad694cb.jpg">
+            <div class="card-content">
+                <h4>Caldas Novas (GO)</h4>
+                <p>Águas Termais</p>
+                <button class="btn btn-primary">Ver Mais</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.postimg.cc/Fs4ZYLF3/441ae2e1ae40e3da14ced4a46b9a4abf-2.jpg">
+            <div class="card-content">
+                <h4>Pirenópolis (GO)</h4>
+                <p>Cidade Histórica</p>
+                <button class="btn btn-primary">Ver Mais</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.postimg.cc/hGf8k8sH/a7f8624ca43f29698f2811973bd617e7-2.jpg">
+            <div class="card-content">
+                <h4>Chapada dos Veadeiros (GO)</h4>
+                <p>Cachoeiras e trilhas</p>
+                <button class="btn btn-primary">Ver Mais</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Pacotes em Destaque</h2>
+    <div class="packages">
+
+        <div class="package">
+            <h3>Gold Premium</h3>
+            <ul>
+                <li>✔ Hotel Selecionado</li>
+                <li>✔ Gastronomia Premium</li>
+                <li>✔ Passeios Exclusivos</li>
+                <li>✔ Guia Bilíngue</li>
+                <li>✔ Transporte Particular</li>
+                <li>✔ Suporte 24h</li>
+            </ul>
+            <p>A partir de R$ 5.200</p>
+            <button class="btn btn-primary">Ver Pacote</button>
+        </div>
+
+        <div class="package">
+            <h3>Silver Experience</h3>
+            <ul>
+                <li>✔ Hotel Confortável</li>
+                <li>✔ Passeios Naturais</li>
+                <li>✔ Transporte Incluso</li>
+                <li>✔ Guia Bilíngue</li>
+                <li>✔ Suporte 24h</li>
+            </ul>
+⠀
+
+            <p>A partir de R$ 3.800</p>
+            <button class="btn btn-primary">Ver Pacote</button>
+        </div>
+
+        <div class="package">
+            <h3>Bronze Experience</h3>
+            <ul>
+                <li>✔ Hotel</li>
+                <li>✔ City Tour</li>
+                <li>✔ Guia Bilíngue</li>
+                <li>✔ Suporte 24h</li>
+            </ul>
+            ⠀
+
+
+            <p>A partir de R$ 2.500</p>
+            <button class="btn btn-primary">Ver Pacote</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about">
+    <h2 class="section-title">Sobre Nós</h2>
+    <p>Somos especialistas em criar experiências inesquecíveis pelo Brasil. Nossa missão é conectar você com a natureza, cultura e conforto, oferecendo viagens únicas e personalizadas.</p>
+</section>
+
+    <section class="why">
+    <div>
+        <h4>Experiência Premium</h4>
+        <p>Serviços de alto padrão</p>
+    </div>
+    <div>
+        <h4>Segurança</h4>
+        <p>Equipe preparada e suporte 24h</p>
+    </div>
+    <div>
+        <h4>Personalização</h4>
+        <p>Viagens sob medida</p>
+    </div>
+    </section>
+
+<section class="testimonials">
+    <h2 class="section-title">Depoimentos</h2>
+    <div class="testimonial-box">
+        <div class="testimonial">
+            <h4>Noah ⭐⭐⭐⭐⭐</h4>
+            <p>Quero aqui expressar o profissionalismo e
+                responsabilidade dessa empresa que confio
+                totalmente. Atendimento excelente e suporte
+                necessário! Empreza que utilizo e indico de
+                olhos fechados.</p>
+        </div>
+        <div class="testimonial">
+            <h4>Emma ⭐⭐⭐⭐⭐</h4>
+            <p>Minha experiência foi fantástica! Desde o planejamento
+                até a execução, tudo foi impecável. A equipe foi atenciosa
+                e profissional, garantindo que cada detalhe fosse perfeito.
+                Recomendo a Lumière Brazil Travel a todos que buscam uma
+                viagem bem-organizada e sem preocupações.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2 class="section-title">Contato</h2>
+    <p><strong>Site:</strong> www.lumierebraziltravel.com</p>
+    <p><strong>Telefone:</strong> (62) 99854-8907</p>
+    <p><strong>Instagram:</strong> @lumiere.travel.oficial</p>
+    <p><strong>Endereço:</strong> Goiânia - GO</p>
+</section>
+
+</body>
+</html>
